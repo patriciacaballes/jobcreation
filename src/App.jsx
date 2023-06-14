@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import PasswordReset from "./pages/PasswordReset";
 import Register from "./pages/Register";
 import UpdatePassword from "./pages/UpdatePassword";
+import "./App.css"
 
 const App = () => {
   return (
