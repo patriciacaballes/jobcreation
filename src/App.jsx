@@ -13,7 +13,7 @@ const App = () => {
     <>
       <NavBar />
       <div>
-        <div className="w-100" style={{ maxWidth: "400px" }}>
+        <div>
           <Routes>
             <Route element={<AuthRoute />}>
               <Route path="/" element={<Home />} />

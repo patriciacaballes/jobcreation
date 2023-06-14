@@ -49,23 +49,30 @@ const Register = () => {
 
   return (
     <>
-      <div>
-        <div>
-          <h2>Register</h2>
-          <form onSubmit={handleSubmit}>
+      {/* REGISTER */}
+      <div className="login relative flex flex-1 flex-col overflow-hidden px-4 py-8 sm:px-6 lg:px-8">
+        <div className="flex flex-1 flex-col items-center justify-center pb-16 pt-12" id="login-form">
+          <h2 className="text-2xl font-bold ">Create your Account</h2>
+          <h3 className="text-s pb-8">Please Enter your details</h3>
+          
+          {/* Form */}
+          <form className="w-full max-w-sm" onSubmit={handleSubmit}>
+            <div className="form-login flex flex-col mb-6">
             <div id="email">
-              <label>Email</label>
-              <input type="email" ref={emailRef} required />
+              <label className="block text-sm font-semibold leading-6 text-gray-900">Email</label>
+              <input type="email" ref={emailRef} className=" label-text mt-2 appearance-none text-slate-900 bg-white rounded-md block w-full px-3 h-10 shadow-sm sm:text-sm focus:outline-none placeholder:text-slate-400 focus:ring-2 ring-1 ring-slate-200" required />
             </div>
             <div id="password">
-              <label>Password</label>
-              <input type="password" ref={passwordRef} required />
+              <label className="block" >Password</label>
+              <input type="password" ref={passwordRef} className="mt-2 appearance-none text-slate-900 bg-white rounded-md block w-full px-3 h-10 shadow-sm sm:text-sm focus:outline-none placeholder:text-slate-400 focus:ring-2 ring-1 ring-slate-200" required />
             </div>
             <div id="confirm-password">
-              <label>Confirm Password</label>
-              <input type="password" ref={confirmPasswordRef} required />
+              <label className="block" >Repeat Password</label>
+              <input type="password" ref={confirmPasswordRef} className="mt-2 appearance-none text-slate-900 bg-white rounded-md block w-full px-3 h-10 shadow-sm sm:text-sm focus:outline-none placeholder:text-slate-400 focus:ring-2 ring-1 ring-slate-200" required />
             </div>
-            {errorMsg && (
+          </div>
+
+          {errorMsg && (
               <div
                 variant="danger"
                 onClose={() => setErrorMsg("")}
@@ -79,15 +86,21 @@ const Register = () => {
               </div>
             )}
             <div>
-              <button disabled={loading} type="submit">
-                Register
-              </button>
+            <div className="text-sm hover:underline flex">
+              <input type="checkbox" checked="checked" className="checkbox checkbox-xs" /> 
+              <p>Accept Terms and Conditions</p>
+            </div>
+            <div className="text-sm hover:underline flex p4">
+              <input type="checkbox" checked="checked" className="checkbox checkbox-xs" /> 
+              <p>Yes,I’d love to recive emails with great content and updates.</p>
+            </div>
+            <button disabled={loading} className = "mt-2 btn btn-primary inline-flex justify-center rounded-lg text-sm font-semibold py-2.5 px-4 text-white hover:bg-slate-700 w-full" type= "submit" >
+                  Create an Account
+                </button>
             </div>
           </form>
         </div>
-      </div>
-      <div>
-        Already a User? <Link to={"/login"}>Login</Link>
+       
       </div>
     </>
   );
