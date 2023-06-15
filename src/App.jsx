@@ -7,6 +7,7 @@ import PasswordReset from "./pages/PasswordReset";
 import Register from "./pages/Register";
 import UpdatePassword from "./pages/UpdatePassword";
 import "./App.css"
+import Dashboard from "./components/Dashboard/Dashboard";
 
 const App = () => {
   return (
@@ -15,9 +16,13 @@ const App = () => {
       <NavBar />
         <div>
           <Routes>
+          {/* <Route element={<Home/>}>
+              <Route path="/dashboard" element={<Dashboard />} />
+            </Route> */}
             <Route element={<AuthRoute />}>
               <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />
+              <Route path="/dashboard" element={<Dashboard />} />
             </Route>
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />

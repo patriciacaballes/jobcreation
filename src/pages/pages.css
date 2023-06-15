@@ -5,10 +5,32 @@
     padding-bottom: 20px;
 }
 .back-login{
-    margin-top: 20px;
-    padding: 40px;
+    /* margin-top: 20px; */
+    padding: 20px;
 }
 .send-pass{
     margin-bottom: 20px;
 }
 
+/* Home */
+.layout{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+}
+.login,.reset-password{
+    height: 100vh;
+}
+
+
+  
+  #sidebar {
+    grid-column: 1;
+  }
+  
+  #dashboard {
+    grid-column: 2;
+  }
+  
