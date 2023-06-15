@@ -11,8 +11,8 @@ import "./App.css"
 const App = () => {
   return (
     <>
+    <div id="app">
       <NavBar />
-      <div>
         <div>
           <Routes>
             <Route element={<AuthRoute />}>

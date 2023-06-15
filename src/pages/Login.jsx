@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthProvider";
+import "./pages.css"
 
 const Login = () => {
   const emailRef = useRef(null);
@@ -34,10 +35,10 @@ const Login = () => {
   return (
     <>
     
-      <div className="login relative flex flex-1 flex-col overflow-hidden px-4 py-8 sm:px-6 lg:px-8">
-        <div className="flex flex-1 flex-col items-center justify-center pb-16 pt-12" id="login-form">
+      <div className="login relative flex flex-1 flex-col overflow-hidden px-4 py-8 sm:px-6 lg:px-8" id="login">
+        <div className="flex flex-1 flex-col items-center justify-center pb-12 pt-12 " id="login-form">
           <h2 className="text-2xl font-bold ">Welcome Back</h2>
-          <h3 className="text-s pb-8">Please Enter your details</h3>
+          <h3 className="text-s pb-2">Please Enter your details</h3>
           
           {/* Form */}
           <form className="w-full max-w-sm" onSubmit={handleSubmit}>
@@ -61,20 +62,21 @@ const Login = () => {
               </div>
             )}
 
-            <div>
+            <div className="mb-20">
               <button disabled={loading} className = "btn btn-primary inline-flex justify-center rounded-lg text-sm font-semibold py-2.5 px-4 text-white hover:bg-slate-700 w-full" type= "submit" >
                   Login
                 </button>
             </div>
           </form>
-        </div>
-        <div className="text-sm hover:underline flex">
+          <div className="text-sm hover:underline flex justify-center ">
         <p> New User? <Link to={"/register"}>Register</Link></p>
         </div>
-        <div className="text-sm hover:underline flex">
+        <div className="text-sm hover:underline flex justify-center">
           <p>Forgot Password? <Link to={"/passwordreset"}> Click Here</Link></p>
         </div>
       </div>
+        </div>
+        
       
     </>
   );
