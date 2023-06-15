@@ -1,22 +1,24 @@
 import React from "react";
 import { useAuth } from "../context/AuthProvider";
 import { SideBar } from "../components/SideBAr";
+import BottomBar from "../components/BottomBar";
 // Dashboard
 
 const Home = () => {
   const { user } = useAuth();
-  
   return (
-  <div className="home layout">
-    <div id="sidebar">
-      <SideBar />
-    </div>
-    <div>
-      Ciao
-    </div>
-
-    
-  </div>)
+    <>
+      <div className="layout" id="home">
+        <div id="sidebar">
+          <SideBar />
+        </div>
+        <div>Home</div>
+      </div>
+      <div className="bottom-bar">
+        <BottomBar />
+      </div>
+    </>
+  );
 };
 
 export default Home;

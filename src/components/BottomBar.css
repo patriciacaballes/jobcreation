@@ -1,0 +1,9 @@
+.bottomBar-icon{
+    font-size: 20px; /* Dimensione desiderata */
+}
+
+#bottom-bar a:hover{
+    background-color: #024A66;
+    color: #ffffff;
+
+  }

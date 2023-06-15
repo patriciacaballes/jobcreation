@@ -35,6 +35,7 @@ const NavBar = () => {
           </ul>
         </div>
       </div>
+
       {/* Autenticato
       <ul>
         <li>{auth && <SideBar />}</li>
