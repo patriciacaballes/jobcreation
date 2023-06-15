@@ -2,9 +2,9 @@ import React from "react";
 import { useAuth } from "../../context/AuthProvider";
 import { SideBar } from "../SideBar";
 import BottomBar from "../BottomBar";
-// Dashboard
+// Chat
 
-const Dashboard = () => {
+const Chat = () => {
   const { user } = useAuth();
   return (
     <>
@@ -12,7 +12,7 @@ const Dashboard = () => {
         <div id="sidebar">
           <SideBar />
         </div>
-        <div  id="dashboard">dashboard</div>
+        <div  id="chat">Chat</div>
       </div>
       <div className="bottom-bar">
         <BottomBar />
@@ -21,4 +21,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Chat;

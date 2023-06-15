@@ -1,6 +1,6 @@
 import React from "react";
 import { useAuth } from "../context/AuthProvider";
-import { SideBar } from "../components/SideBAr";
+import { SideBar } from "../components/SideBar";
 import BottomBar from "../components/BottomBar";
 // Dashboard
 

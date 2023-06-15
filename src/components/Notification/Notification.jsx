@@ -1,18 +1,20 @@
 import React from "react";
-import { useAuth } from "../../context/AuthProvider";
+import { useAuth } from "../../context/AuthProvider"
 import { SideBar } from "../SideBar";
 import BottomBar from "../BottomBar";
+import "./Notification.css"
+
 // Dashboard
 
-const Dashboard = () => {
+const Notification = () => {
   const { user } = useAuth();
   return (
     <>
-      <div className="layout">
+      <div className="layout" >
         <div id="sidebar">
           <SideBar />
         </div>
-        <div  id="dashboard">dashboard</div>
+        <div id="notification">notification</div>
       </div>
       <div className="bottom-bar">
         <BottomBar />
@@ -21,4 +23,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Notification;

@@ -2,9 +2,10 @@ import React from "react";
 import { useAuth } from "../../context/AuthProvider";
 import { SideBar } from "../SideBar";
 import BottomBar from "../BottomBar";
+import "./JobOffer.css"
 // Dashboard
 
-const Dashboard = () => {
+const JobOffer = () => {
   const { user } = useAuth();
   return (
     <>
@@ -12,8 +13,8 @@ const Dashboard = () => {
         <div id="sidebar">
           <SideBar />
         </div>
-        <div  id="dashboard">dashboard</div>
-      </div>
+        <div id="jobOffer">jobOffer</div>
+      </div >
       <div className="bottom-bar">
         <BottomBar />
       </div>
@@ -21,4 +22,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default JobOffer;

@@ -14,10 +14,10 @@
 
 /* Home */
 .layout{
-    display: grid;
+  grid-template-columns: 1fr;
+    display: flex;
     width: 100%;
     height: 100%;
-    grid-template-columns: 1fr 2fr;
 }
 #sidebar{
     display: none;
@@ -43,6 +43,10 @@
   @media(min-width:800px){
     #sidebar{
         display: block;
+    }
+    .layout{
+      grid-template-columns: 1fr 4.5fr;
+      gap: 20px;
     }
     .bottom-bar{
         display: none;

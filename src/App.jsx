@@ -8,6 +8,12 @@ import Register from "./pages/Register";
 import UpdatePassword from "./pages/UpdatePassword";
 import "./App.css"
 import Dashboard from "./components/Dashboard/Dashboard";
+import JobOffer from "./components/JobOffer/JobOffer";
+import TaskList from "./components/TaskList/TaskList";
+import Settings from "./components/Settings/Settings";
+import Project from "./components/Project/Project";
+import Notification from "./components/Notification/Notification"
+import Chat from "./components/Chat/Chat";
 
 
 const App = () => {
@@ -21,9 +27,15 @@ const App = () => {
               <Route path="/dashboard" element={<Dashboard />} />
             </Route> */}
             <Route element={<AuthRoute />}>
-              <Route path="/" element={<Home />} />
-              <Route path="/home" element={<Home />} />
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/home" element={<Dashboard />} />
               <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/job-offer" element={<JobOffer />} />
+              <Route path="/project" element={<Project />} />
+              <Route path="/task-list" element={<TaskList />} />
+              <Route path="/notification" element={<Notification />} />
+              <Route path="/chat" element={<Chat/>} />
+              <Route path="/settings" element={<Settings />} />
             </Route>
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
