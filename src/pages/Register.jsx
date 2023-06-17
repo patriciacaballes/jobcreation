@@ -113,7 +113,7 @@ const Register = () => {
               </div>
               <button
                 disabled={loading}
-                className="mt-2 btn btn-primary inline-flex justify-center rounded-lg text-sm font-semibold py-2.5 px-4 text-white hover:bg-slate-700 w-full"
+                className="submit mt-2 btn btn-primary inline-flex justify-center rounded-lg text-sm font-semibold py-2.5 px-4 text-white hover:bg-slate-700 w-full"
                 type="submit"
               >
                 Create an Account

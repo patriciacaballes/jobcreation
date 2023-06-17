@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import AuthRoute from "./components/AuthRoute";
 import NavBar from "./components/NavBar";
-import Home from "./pages/Home";
+// import Home from "./pages/Home";
 import Login from "./pages/Login";
 import PasswordReset from "./pages/PasswordReset";
 import Register from "./pages/Register";
@@ -14,6 +14,8 @@ import Settings from "./components/Settings/Settings";
 import Project from "./components/Project/Project";
 import Notification from "./components/Notification/Notification"
 import Chat from "./components/Chat/Chat";
+import DashProject from "./components/Dashboard/DashProject/DashProject";
+
 
 
 const App = () => {
@@ -29,7 +31,9 @@ const App = () => {
             <Route element={<AuthRoute />}>
               <Route path="/" element={<Dashboard />} />
               <Route path="/home" element={<Dashboard />} />
-              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/dashboard" element={<Dashboard />}>
+                  <Route path="/dashboard-project" element={<DashProject />} />
+              </Route>              
               <Route path="/job-offer" element={<JobOffer />} />
               <Route path="/project" element={<Project />} />
               <Route path="/task-list" element={<TaskList />} />

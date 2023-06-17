@@ -1,0 +1,55 @@
+.statContainer{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #024A66;
+    background:#ffffff;
+    filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.2));
+    padding: 20px;
+    border-radius: 10px;
+}
+.stat{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* .statName p{
+    display: block;
+} */
+.statName{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-items: center;
+    font-size: 0.8rem;
+    width: 100%;
+}
+.justify-end{
+    justify-self: end;
+}
+.justify-start{
+    justify-self: start;
+}
+progress{
+    height: 12px;
+    width: 100%;
+}
+.custom-progress::-webkit-progress-bar {
+  background-color: #CBD8DD;
+  border-radius: 10px;
+  height: 12px;
+  width: 100%;
+}
+
+.custom-progress::-webkit-progress-value {
+  background-color: #024A66;
+  border-radius: 10px;
+  height: 12px;
+  width: 100%;
+}
+.stat-progress{
+    width: 100%;
+}

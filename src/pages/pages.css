@@ -38,6 +38,14 @@
     color: #ffffff;
 
   }
+  .submit{
+    background: #024A66;
+  }
+  .submit:hover{
+    background:#CBD8DD;
+    border-color: #CBD8DD;
+    color: #024A66;
+  }
 
 
   @media(min-width:800px){

@@ -52,13 +52,13 @@ const PasswordReset = () => {
             <div>
               <button
                 disabled={loading}
-                className="btn btn-primary inline-flex justify-center rounded-lg text-sm font-semibold py-2.5 px-4 text-white hover:bg-slate-700 w-full"
+                className="submit btn btn-primary inline-flex justify-center rounded-lg text-sm font-semibold py-2.5 px-4 text-white hover:bg-slate-700 w-full"
                 type="submit"
               >
                 Send Reset Link
               </button>
             </div>
-            <div className="text-center back-login">
+            <div className="text-center back-login hover:underline">
           Back to Login? <Link to={"/login"}>Login</Link>
         </div>
           </form>
