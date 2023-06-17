@@ -45,32 +45,32 @@ const Dashboard = () => {
             </div>
             <div className="dash-ongoing-project">
             <DashOngoing
-                title="Sewing face mask"
+                title="Paper flower backdrop"
                 pcs="200pcs"
                 month="1 month"
                 start="08/03/23"
-                end="08/03/23"
-                price="€300"
+                end="08/05/23"
+                price="€350"
               />
             </div>
             <div className="dash-ongoing-project">
             <DashOngoing
-                title="Sewing face mask"
+                title="Custom t-shirt Printing "
                 pcs="200pcs"
-                month="1 month"
+                month="2 months "
                 start="08/03/23"
-                end="08/03/23"
-                price="€300"
+                end="08/05/23"
+                price="€500"
               />
             </div>
             <div className="dash-ongoing-project">
             <DashOngoing
-                title="Sewing face mask"
+                title="Necklace"
                 pcs="200pcs"
-                month="1 month"
-                start="08/03/23"
-                end="08/03/23"
-                price="€300"
+                month="1 month "
+                start="08/04/23"
+                end="08/05/23"
+                price="€200"
               />
             </div>
           </div>

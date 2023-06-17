@@ -15,7 +15,7 @@ export default function DashGallery() {
     <>
     <div className="dashGallery">
       <div className="gallery-title">
-        <h3>your Gallery work</h3>
+        <h3>Your Gallery Work</h3>
         <FaImages />
       </div>
       <div className="gallery-images">
