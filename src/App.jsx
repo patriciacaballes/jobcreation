@@ -15,6 +15,7 @@ import Project from "./components/Project/Project";
 import Notification from "./components/Notification/Notification"
 import Chat from "./components/Chat/Chat";
 import DashProject from "./components/Dashboard/DashProject/DashProject";
+import JobInformation from "./components/JobOffer/JobInformation/JobInformation";
 
 
 
@@ -33,7 +34,8 @@ const App = () => {
               <Route path="/home" element={<Dashboard />} />
               <Route path="/dashboard" element={<Dashboard />}>
                   <Route path="/dashboard-project" element={<DashProject />} />
-              </Route>              
+              </Route>
+              <Route path="/:id" element ={<JobInformation/>} />          
               <Route path="/job-offer" element={<JobOffer />} />
               <Route path="/project" element={<Project />} />
               <Route path="/task-list" element={<TaskList />} />

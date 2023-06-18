@@ -1,51 +1,30 @@
 import React from 'react'
-import { supabase } from '../../../supabase/client'
-import { useAuth } from '../../../context/AuthProvider'
-import { useState,useEffect } from 'react'
+import "./JobCard.css"
+import { Link } from 'react-router-dom'
+import JobInformation from '../JobInformation/JobInformation'
 
+  export default function JobCard({job}) {
 
-
-  // console.log(supabase)
-
-  export default function JobCard() {
-    const { user } = useAuth();
-    console.log(user)
-    const [fetchError, setFetchError] = useState(null)
-    const [job, setjob] = useState(null)
-  
-    useEffect(() => {
-      const fetchjob = async () => {
-        if (user) {
-        const { data, error } = await supabase
-          .from('jobOffer')
-          .select()
-        
-        
-        if (error) {
-          setFetchError('Could not fetch the job')
-          setjob(null)
-        }else if (data) {
-          setjob(data)
-          setFetchError(null)
-        }
-        }
-      }
-  
-      fetchjob()
-  
-    }, [user])
-    console.log(job)
   
   return (
-    <div>
-      {fetchError && (<p>{fetchError}</p>)}
-      {job && (
-        <div className="job">
-          {/* order-by buttons */}
-          <p>Ciao{job[0].company}</p>
-        </div>
-      )}
+    <>
+    <div className="card-container">
+      <div className="company-image">
+        <img src={job.img} alt="company-img" />
+      </div>
+      <div className="job-info">
+      <h2 className="job-title">{job.title}</h2>
+      <h3 className="job-company">{job.company}</h3>
+      <p className="job-description">{job.summery}</p>
+      </div>
+      
+      <button className="btn-apply"><Link to={"/"+job.id}> Apply now </Link></button>
+   
     </div>
+    
+    
+    
+    </>
   )
 }
 

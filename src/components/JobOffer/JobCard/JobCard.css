@@ -1,0 +1,53 @@
+.card-container{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    padding: 20px;
+    align-items: center;
+    background: #FFFFFF;
+    border: 1px solid rgba(2, 74, 102, 0.1);
+    border-radius: 20px;
+    filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.2));}
+
+
+
+.company-image img{
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+}
+
+.job-info{
+    padding: 0px 20px 0px 10px;
+}
+
+.job-title{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.job-company{
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.job-description{
+    font-size: 0.8rem;
+    font-weight: 350;
+}
+
+.btn-apply{
+    width: 90px;
+    height: 30px;
+    font-size: 0.8rem;
+    background-color: #024A66;
+    box-shadow: 0px 2px 4px #024a664d ;
+    border-radius: 50px;
+    color: #ffff;
+    font-weight: 500;
+}
+
+.btn-apply:hover{
+    background-color: #CBD8DD;
+    color: #024A66;
+}
