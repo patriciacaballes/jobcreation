@@ -38,6 +38,17 @@ export default function JobInformation() {
             //   uguale a fetch job
             if (data) {
                 setTitle(data.title)
+                setCompany(data.company)
+                setLocation(data.location)
+                setSalary(data.salary)
+                setContract(data.contract)
+                setItems(data.items)
+                setResponsabilities(data.responsabilities)
+                setConditions(data.conditions)
+                setRequirements(data.requirements)
+                setStart(data.start)
+                setEnd(data.End)
+                setImg(data.Img)
                 // setMethod(data.method)
                 // setRating(data.rating)
                 console.log(title)
@@ -50,6 +61,6 @@ export default function JobInformation() {
 
 
   return (
-    <div>JobInformation-{id},{title}</div>
+    <div>JobInformation-{id},{title},{company},{location},{salary},{contract},{items},{responsabilities},{conditions},{requirements},{start},{end},{img}</div>
   )
 }
