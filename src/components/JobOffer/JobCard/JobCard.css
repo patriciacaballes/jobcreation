@@ -6,7 +6,8 @@
     background: #FFFFFF;
     border: 1px solid rgba(2, 74, 102, 0.1);
     border-radius: 20px;
-    filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.2));}
+    filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.2));
+}
 
 
 
@@ -50,4 +51,32 @@
 .btn-apply:hover{
     background-color: #CBD8DD;
     color: #024A66;
+}
+.jobCard{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+.search-bar{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    gap: 20px;
+    width: 100%;
+    color: #024A66;
+    background: #FFFFFF;
+    /* color1 */
+
+    border: 1px solid #CBD8DD;
+    /* shadow card */
+
+    filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.2));
+    border-radius: 10px;
+    padding-left: 20px;
+    
+}
+.search-bar input{
+    width: 100%;
+    outline: none;
 }

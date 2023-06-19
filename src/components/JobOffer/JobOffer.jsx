@@ -6,6 +6,7 @@ import "./JobOffer.css";
 import JobCard from "./JobCard/JobCard";
 import { supabase } from "../../supabase/client";
 import { useState, useEffect } from "react";
+import { FaSearch } from "react-icons/fa";
 // Dashboard
 
 const JobOffer = () => {
@@ -13,6 +14,8 @@ const JobOffer = () => {
   console.log(user);
   const [fetchError, setFetchError] = useState(null);
   const [jobs, setjobs] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
+
 
   useEffect(() => {
     const fetchjobs = async () => {
@@ -31,6 +34,12 @@ const JobOffer = () => {
     fetchjobs();
   }, [user]);
   console.log(jobs);
+  // Search Bar
+  const filteredJobs = jobs
+    ? jobs.filter((job) =>
+        job.title.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    : [];
 
   return (
     <>
@@ -41,16 +50,21 @@ const JobOffer = () => {
 
         {/* JobsOffer */}
         <div id="jobOffer">
+       
           <div className="jobCard">
-              {fetchError && <p>{fetchError}</p>}
-              {jobs && (
-                <div className="jobs"> 
-                {/* inizio ciclo di tutti i job offer */}
-                  {jobs.map(job=>(   
-                    <JobCard job={job} key={job.id} />
-                  ))}
-                </div>
-              )}
+          <div className="search-bar">
+            <FaSearch />
+            <input
+              type="text"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              placeholder="Find your dream Job..."
+            />
+          </div>
+            {fetchError && <p>{fetchError}</p>}
+            {filteredJobs.map((job) => (
+              <JobCard job={job} key={job.id} />
+            ))}
           </div>
           {/* filter start */}
           <div className="filter">filter</div>
