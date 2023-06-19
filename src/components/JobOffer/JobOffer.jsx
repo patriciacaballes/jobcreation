@@ -1,57 +1,64 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useAuth } from "../../context/AuthProvider";
 import { SideBar } from "../SideBar";
 import BottomBar from "../BottomBar";
 import "./JobOffer.css";
 import JobCard from "./JobCard/JobCard";
 import { supabase } from "../../supabase/client";
-import { useState, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
-// Dashboard
 
 const JobOffer = () => {
   const { user } = useAuth();
   console.log(user);
   const [fetchError, setFetchError] = useState(null);
-  const [jobs, setjobs] = useState(null);
-  const [searchTerm, setSearchTerm] = useState('');
-
+  const [jobs, setJobs] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [jobsPerPage] = useState(1); //Cambiare questo se vuoi visualizzare n numeri per pagina
 
   useEffect(() => {
-    const fetchjobs = async () => {
+    const fetchJobs = async () => {
       if (user) {
         const { data, error } = await supabase.from("jobOffer").select();
         if (error) {
           setFetchError("Could not fetch the jobs");
-          setjobs(null);
+          setJobs(null);
         } else if (data) {
-          setjobs(data);
+          setJobs(data);
           setFetchError(null);
         }
       }
     };
 
-    fetchjobs();
+    fetchJobs();
   }, [user]);
-  console.log(jobs);
-  // Search Bar
+
+  // Filter jobs based on search term
   const filteredJobs = jobs
     ? jobs.filter((job) =>
         job.title.toLowerCase().includes(searchTerm.toLowerCase())
       )
     : [];
 
-  return (
-    <>
-      <div className="layout">
-        <div id="sidebar">
-          <SideBar />
-        </div>
+  // Pagination
+  const indexOfLastJob = currentPage * jobsPerPage;
+  const indexOfFirstJob = indexOfLastJob - jobsPerPage;
+  const currentJobs = filteredJobs.slice(indexOfFirstJob, indexOfLastJob);
 
-        {/* JobsOffer */}
-        <div id="jobOffer">
-       
-          <div className="jobCard">
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
+  return (
+    <div className="layout">
+      <div id="sidebar">
+        <SideBar />
+      </div>
+
+      {/* JobsOffer */}
+      <div id="jobOffer">
+        <div className="jobCard">
+          {/* Search Bar */}
           <div className="search-bar">
             <FaSearch />
             <input
@@ -61,23 +68,49 @@ const JobOffer = () => {
               placeholder="Find your dream Job..."
             />
           </div>
-            {fetchError && <p>{fetchError}</p>}
-            {filteredJobs.map((job) => (
+          {/* Fetch Error */}
+          {fetchError && <p>{fetchError}</p>}
+          {/* Display Jobs */}
+          <div className="jobs">
+            {currentJobs.map((job) => (
               <JobCard job={job} key={job.id} />
             ))}
           </div>
-          {/* filter start */}
-          <div className="filter">filter</div>
+          {/* Pagination */}
+          {filteredJobs.length > jobsPerPage && (
+            <div className="pagination">
+              <ul className="pagination-list">
+                {Array.from(
+                  { length: Math.ceil(filteredJobs.length / jobsPerPage) },
+                  (_, index) => (
+                    <li
+                      key={index + 1}
+                      className={`pagination-item ${
+                        currentPage === index + 1 ? "active" : ""
+                      }`}
+                    >
+                      <button
+                        onClick={() => paginate(index + 1)}
+                        className="pagination-link"
+                      >
+                        {index + 1}
+                      </button>
+                    </li>
+                  )
+                )}
+              </ul>
+            </div>
+          )}
         </div>
+        {/* Filter */}
+        <div className="filter">filter</div>
       </div>
 
       <div className="bottom-bar">
         <BottomBar />
       </div>
-    </>
+    </div>
   );
 };
 
 export default JobOffer;
-
-
