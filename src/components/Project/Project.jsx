@@ -4,6 +4,7 @@ import { SideBar } from "../SideBar";
 import BottomBar from "../BottomBar";
 import "./Project.css";
 import { supabase } from "../../supabase/client";
+import JobCard from "../JobOffer/JobCard/JobCard";
 
 // Dashboard
 
@@ -35,16 +36,16 @@ const Project = () => {
         <div id="sidebar">
           <SideBar />
         </div>
-        <div id="project">Project{profileId}</div>
+        <div id="project">
+               
         {applications && applications.map((application) => (
-  <div key={application.id}>
-   <p> {application.job_id.title}
-    id
-    {application.id}
-    </p>
-  </div>
+
+  <JobCard job={application.job_id} key={application.job_id.id}
+  />
+
   
 ))}
+</div>
       </div>
       <div className="bottom-bar">
         <BottomBar />
@@ -54,3 +55,13 @@ const Project = () => {
 };
 
 export default Project;
+
+
+  // <div key={application.id}>
+
+  //  <p> {application.job_id.title}
+  //   id
+  //   {application.id}
+  //   </p>
+  // </div>
+  // fine ciclo
