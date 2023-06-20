@@ -34,11 +34,11 @@ const SideBar = () => {
       <nav className="sidebar card">
         <ul className=" menu w-56 rounded-box" id="sidebar-menu">
           <div>
-          <div>
-            <FaUserCircle className="sideBar-icon" />
-            <span>Nome Utente</span>
+            <div>
+              <FaUserCircle className="sideBar-icon" />
+              <span>Nome Utente</span>
+            </div>
           </div>
-        </div>       
           <li>
             <Link to="/dashboard">
               <FaHome className="sideBar-icon" />
@@ -53,38 +53,38 @@ const SideBar = () => {
           </li>
           <li>
             <Link to="/project">
-              <FaClipboardCheck className="sideBar-icon"/>
+              <FaClipboardCheck className="sideBar-icon" />
               <span>Project</span>
             </Link>
           </li>
           <li>
             <Link to="/task-list">
-              <FaTasks className="sideBar-icon"/>
+              <FaTasks className="sideBar-icon" />
               <span>Task List</span>
             </Link>
           </li>
           <li>
             <Link to="/notification">
-              <FaBell className="sideBar-icon"/>
+              <FaBell className="sideBar-icon" />
               <span>Notification</span>
             </Link>
           </li>
           <li>
             <Link to="/chat">
-              <FaComments className="sideBar-icon"/>
+              <FaComments className="sideBar-icon" />
               <span>Chat</span>
             </Link>
           </li>
           <li>
             <Link to="/settings">
-              <FaCog className="sideBar-icon"/>
+              <FaCog className="sideBar-icon" />
               <span>Settings</span>
             </Link>
           </li>
           <li>
             {auth && (
               <button onClick={handleLogout}>
-                <FaSignOutAlt className="sideBar-icon"/>
+                <FaSignOutAlt className="sideBar-icon" />
                 Logout
               </button>
             )}

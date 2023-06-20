@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import "./DashOngoing.css";
 
 export default function DashOngoing(props) {
@@ -20,7 +20,7 @@ export default function DashOngoing(props) {
               <p>deadline</p>
             </div>
             <div className="project-start-end dark">
-              <p className='light'>{start} START</p>
+              <p className="light">{start} START</p>
               <p>{end} END</p>
             </div>
           </div>

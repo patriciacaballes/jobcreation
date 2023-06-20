@@ -1,53 +1,30 @@
-import React from 'react'
-import "./JobCard.css"
-import { Link } from 'react-router-dom'
-import JobInformation from '../JobInformation/JobInformation'
+import React from "react";
+import "./JobCard.css";
+import { Link } from "react-router-dom";
+import JobInformation from "../JobInformation/JobInformation";
 
-  export default function JobCard({job}) {
-
-  
+export default function JobCard({ job }) {
   return (
     <>
-    <div className="card-container">
-      <div className="company-image">
-        <img src={job.img} alt="company-img" />
+      <div className="card-container">
+        <div className="company-image">
+          <img src={job.img} alt="company-img" />
+        </div>
+        <div className="job-info">
+          <h2 className="job-title">{job.title}</h2>
+          <h3 className="job-company">{job.company}</h3>
+          <p className="job-description">{job.summary}</p>
+        </div>
+
+        <Link to={"/" + job.id}>
+          <button className="btn-apply">
+             Apply now 
+          </button>
+        </Link>
       </div>
-      <div className="job-info">
-      <h2 className="job-title">{job.title}</h2>
-      <h3 className="job-company">{job.company}</h3>
-      <p className="job-description">{job.summery}</p>
-      </div>
-      
-      <button className="btn-apply"><Link to={"/"+job.id}> Apply now </Link></button>
-   
-    </div>
-    
-    
-    
     </>
-  )
+  );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import React, { useState, useEffect } from "react";
 // import { useAuth } from "../../../context/AuthProvider";
@@ -58,7 +35,7 @@ import JobInformation from '../JobInformation/JobInformation'
 //   const { user } = useAuth();
 //   const [jobTitle, setJobTitle] = useState("");
 //   const [company, setCompany] = useState("");
-//   const [jobSummery, setJobSummery] = useState("");
+//   const [jobSummary, setJobSummary] = useState("");
 
 //   useEffect(() => {
 //     const fetchJob = async () => {
@@ -71,7 +48,7 @@ import JobInformation from '../JobInformation/JobInformation'
 //           if (error) {
 //             console.error("Error while retrieving job details:", error);
 //           } else if (data) {
-//             setJobSummery(data.jobSummery);
+//             setJobSummary(data.jobSummary);
 //             setJobTitle(data.jobTitle);
 //             setCompany(data.company);
 //           }
@@ -90,7 +67,7 @@ import JobInformation from '../JobInformation/JobInformation'
 //       <div className="job-card">
 //         <h3>{jobTitle}</h3>
 //         <p>{company}</p>
-//         <p>{jobSummery}</p>
+//         <p>{jobSummary}</p>
 //       </div>
 //     </>
 //   );

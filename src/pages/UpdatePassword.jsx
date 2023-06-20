@@ -48,10 +48,7 @@ const UpdatePassword = () => {
               <input type="password" ref={confirmPasswordRef} required />
             </div>
             {errorMsg && (
-              <div
-                variant="danger"
-                onClose={() => setErrorMsg("")}
-                dismissible>
+              <div variant="danger" onClose={() => setErrorMsg("")} dismissible>
                 {errorMsg}
               </div>
             )}

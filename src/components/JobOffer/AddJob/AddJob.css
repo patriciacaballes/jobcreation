@@ -1,0 +1,87 @@
+.AddJob .layout{
+    width: 100%;
+}
+.form-add-job{
+   
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100% ;
+    margin-right: 20px;
+    color:#024A66;
+    padding: 0px 100px;
+}
+.form-add-job h1,.job-offer-title h1{
+    color: #024A66;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.add-main-info{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.form-job-info{
+    /* display: flex;
+    flex-direction: column; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    gap: 20px;
+}
+
+.add-image-url{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.add-conditions{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.AddJob input,.AddJob textarea{
+        width: 100%; 
+        outline: none;
+        border: 2px solid #D9D9D9;
+        border-radius: 10px;
+        padding: 20px;
+}
+.AddJob input{
+    height: 3rem;
+}
+
+.AddJob textarea{
+    height: 6rem;
+}
+.btn-add-job{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;   
+}
+.flex-right{
+    align-self: flex-end;
+    padding-bottom: 20px;
+}
+.add-job-title, .job-offer-title{
+    display: flex;justify-content: space-between;
+}
+
+@media (max-width:600px) {
+    .add-main-info,.form-job-info{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .form-add-job{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    }
+   
+
+}
+
+

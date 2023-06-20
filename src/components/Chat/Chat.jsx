@@ -12,7 +12,7 @@ const Chat = () => {
         <div id="sidebar">
           <SideBar />
         </div>
-        <div  id="chat">Chat</div>
+        <div id="chat">Chat</div>
       </div>
       <div className="bottom-bar">
         <BottomBar />

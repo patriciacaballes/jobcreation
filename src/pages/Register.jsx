@@ -15,11 +15,16 @@ const Register = () => {
   const [termsChecked, setTermsChecked] = useState(false);
   const [emailUpdatesChecked, setEmailUpdatesChecked] = useState(false);
 
-  const register = (email, password) => supabase.auth.signUp({ email, password });
+  const register = (email, password) =>
+    supabase.auth.signUp({ email, password });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!passwordRef.current?.value || !emailRef.current?.value || !confirmPasswordRef.current?.value) {
+    if (
+      !passwordRef.current?.value ||
+      !emailRef.current?.value ||
+      !confirmPasswordRef.current?.value
+    ) {
       setErrorMsg("Please fill all the fields");
       return;
     }
@@ -30,11 +35,16 @@ const Register = () => {
     try {
       setErrorMsg("");
       setLoading(true);
-      const { data, error } = await register(emailRef.current.value, passwordRef.current.value);
+      const { data, error } = await register(
+        emailRef.current.value,
+        passwordRef.current.value
+      );
       console.log(data);
       console.log(error);
       if (!error && data) {
-        setMsg("Registration Successful. Check your email to confirm your account");
+        setMsg(
+          "Registration Successful. Check your email to confirm your account"
+        );
       }
     } catch (error) {
       setErrorMsg("Error in Creating Account");
@@ -46,7 +56,10 @@ const Register = () => {
     <>
       {/* REGISTER */}
       <div className="login relative flex flex-1 flex-col overflow-hidden px-4 py-8 sm:px-6 lg:px-8">
-        <div className="flex flex-1 flex-col items-center justify-center pb-2 pt-0" id="login-form">
+        <div
+          className="flex flex-1 flex-col items-center justify-center pb-2 pt-0"
+          id="login-form"
+        >
           <h2 className="text-2xl font-bold ">Create your Account</h2>
           <h3 className="text-s pb-2">Please Enter your details</h3>
 
@@ -54,7 +67,9 @@ const Register = () => {
           <form className="w-full max-w-sm" onSubmit={handleSubmit}>
             <div className="form-login flex flex-col mb-6">
               <div id="email">
-                <label className="block text-sm font-semibold leading-6 text-gray-900">Email</label>
+                <label className="block text-sm font-semibold leading-6 text-gray-900">
+                  Email
+                </label>
                 <input
                   type="email"
                   ref={emailRef}
@@ -109,7 +124,10 @@ const Register = () => {
                   onChange={() => setEmailUpdatesChecked(!emailUpdatesChecked)}
                   className="checkbox checkbox-xs "
                 />
-                <p> Yes,I’d love to recive emails with great content and updates.</p>
+                <p>
+                  {" "}
+                  Yes,I’d love to recive emails with great content and updates.
+                </p>
               </div>
               <button
                 disabled={loading}

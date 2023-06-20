@@ -4,8 +4,6 @@ import "./DashProject.css";
 import { FaArchive, FaFile, FaCheckCircle } from "react-icons/fa";
 
 export default function DashProject() {
-
-
   return (
     <>
       <div className="dashProject" id="dashProject">

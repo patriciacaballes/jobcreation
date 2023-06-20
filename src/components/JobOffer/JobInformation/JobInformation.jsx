@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./JobInformation.css";
 import { useParams, useNavigate, Link } from "react-router-dom";
-import { supabase } from "../../../supabase/client";
 import { SideBar } from "../../SideBar";
 import BottomBar from "../../BottomBar";
+import { useAuth } from "../../../context/AuthProvider";
+import { supabase } from "../../../supabase/client";
 
 export default function JobInformation() {
   const { id } = useParams();
@@ -21,19 +22,31 @@ export default function JobInformation() {
   const [end, setEnd] = useState("");
   const [img, setImg] = useState("");
   const [description, setDescription] = useState("");
+  const { user } = useAuth();
+
+  const handleApplyNow = async () => {
+    // Aggiungo in Application i progetti || lavori una volta premuto apply
+    const jobID = id;
+    const { data, error } = await supabase
+      .from("applications")
+      .insert([{ user_id: user.id, job_id: jobID }]);
+
+    // Visualizzare il messaggio di successo o eseguire altre azioni desiderate
+    window.my_modal_1.showModal();
+  };
 
   useEffect(() => {
     const fetchJobs = async () => {
-      // const [jobs, setjobs] = useState(null);
-
-      const { data, error } = await supabase.from("jobOffer").select().eq("id", id).single();
-      console.log(data);
+      const { data, error } = await supabase
+        .from("jobOffer")
+        .select()
+        .eq("id", id)
+        .single();
 
       if (error) {
-        useNavigate;
         navigate("/", { replace: true });
       }
-      //   uguale a fetch job
+
       if (data) {
         setTitle(data.title);
         setCompany(data.company);
@@ -48,9 +61,6 @@ export default function JobInformation() {
         setEnd(data.end);
         setImg(data.img);
         setDescription(data.description);
-        // setMethod(data.method)
-        // setRating(data.rating)
-        console.log(title);
       }
     };
 
@@ -68,84 +78,86 @@ export default function JobInformation() {
           <div className="main-info">
             <img src={img} alt="company img" />
             <div className="job-info">
-            {title && (
-              <h1>
-                Job Title: <span>{title}</span>
-              </h1>
-            )}
-             {company && (
-              <h1>
-                Company: <span>{company}</span>
-              </h1>
-             )}
-              {location && (
-              <h1>
-                Location: <span>{location}</span>
-              </h1>
+              {title && (
+                <h1>
+                  Job Title: <span>{title}</span>
+                </h1>
               )}
-               {salary && (
-              <h1>
-                Salary: <span>{salary}</span>
-              </h1>
-               )}
-                {contract && (
-              <h1>
-                Contract: <span>{contract}</span>
-              </h1>
-                )}
-                 {produce && (
-              <h1>
-                produce to be produced: <span>{produce}</span>
-              </h1>
-                 )}
-                  {start && (
-              <h1>
-                Start: <span>{start}</span>
-              </h1>
-                  )}
-                   {end && (
-              <h1>
-                End: <span>{end}</span>
-              </h1>
-                   )}
+              {company && (
+                <h1>
+                  Company: <span>{company}</span>
+                </h1>
+              )}
+              {location && (
+                <h1>
+                  Location: <span>{location}</span>
+                </h1>
+              )}
+              {salary && (
+                <h1>
+                  Salary: <span>{salary}</span>
+                </h1>
+              )}
+              {contract && (
+                <h1>
+                  Contract: <span>{contract}</span>
+                </h1>
+              )}
+              {produce && (
+                <h1>
+                  produce to be produced: <span>{produce}</span>
+                </h1>
+              )}
+              {start && (
+                <h1>
+                  Start: <span>{start}</span>
+                </h1>
+              )}
+              {end && (
+                <h1>
+                  End: <span>{end}</span>
+                </h1>
+              )}
             </div>
-            <button className="btn-apply"
-            onClick={()=>window.my_modal_1.showModal()}>apply now</button>
+            <button className="btn-apply" onClick={handleApplyNow}>
+              apply now
+            </button>
             <dialog id="my_modal_1" className="modal">
               <form method="dialog" className="modal-box">
                 <h3>Success!</h3>
-                <p >Your application has been successfully submitted</p>
+                <p>Your application has been successfully submitted</p>
                 <div className="modal-action">
-                  {/* if there is a button in form, it will close the modal */}
-                  <Link to="/job-offer"><button className="btn-close">Close</button></Link>
+                  <Link to="/job-offer">
+                    <button className="btn-close">Close</button>
+                  </Link>
                 </div>
               </form>
             </dialog>
-
           </div>
-          {description && ( <div className="description">
-            <h1>Job Description</h1>
-            <p>{description}</p>
-          </div>
+          {description && (
+            <div className="description">
+              <h1>Job Description</h1>
+              <p>{description}</p>
+            </div>
           )}
           {responsibilities && (
-          <div className="responsibilities">
-            <h1>Key Responsibilities</h1>
-            <p>{responsibilities}</p>
-          </div>
+            <div className="responsibilities">
+              <h1>Key Responsibilities</h1>
+              <p>{responsibilities}</p>
+            </div>
           )}
           {requirements && (
-          <div className="requirements">
-            <h1>Requirements</h1>
-            <p>{requirements}</p>
-          </div>
+            <div className="requirements">
+              <h1>Requirements</h1>
+              <p>{requirements}</p>
+            </div>
           )}
           {conditions && (
-          <div className="working-conditions">
-            <h1>Working Conditions</h1>
-            <p>{conditions}</p>
-            <p></p>
-          </div>
+            <div className="working-conditions">
+              <h1>Working Conditions</h1>
+              <p>{conditions}</p>
+              <p></p>
+            </div>
           )}
         </div>
       </div>

@@ -6,6 +6,7 @@ import "./JobOffer.css";
 import JobCard from "./JobCard/JobCard";
 import { supabase } from "../../supabase/client";
 import { FaSearch } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const JobOffer = () => {
   const { user } = useAuth();
@@ -14,7 +15,7 @@ const JobOffer = () => {
   const [jobs, setJobs] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const [jobsPerPage] = useState(1); //Cambiare questo se vuoi visualizzare n numeri per pagina
+  const [jobsPerPage] = useState(5); //Cambiare questo se vuoi visualizzare n numeri per pagina
 
   useEffect(() => {
     const fetchJobs = async () => {
@@ -58,7 +59,14 @@ const JobOffer = () => {
       {/* JobsOffer */}
       <div id="jobOffer">
         <div className="jobCard">
+        <div className="job-offer-title">
+            <h1>Discover the perfect job for you</h1>
+          <button className="add-job btn-apply"><Link to={"/add-job"}>+ Add Job</Link></button>
+          {/* <button className="btn-apply">
+          <Link to={"/" + job.id}> Apply now </Link>
+        </button> */}
           {/* Search Bar */}
+          </div>
           <div className="search-bar">
             <FaSearch />
             <input

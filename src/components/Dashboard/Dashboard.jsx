@@ -44,7 +44,7 @@ const Dashboard = () => {
               />
             </div>
             <div className="dash-ongoing-project">
-            <DashOngoing
+              <DashOngoing
                 title="Paper flower backdrop"
                 pcs="200pcs"
                 month="1 month"
@@ -54,7 +54,7 @@ const Dashboard = () => {
               />
             </div>
             <div className="dash-ongoing-project">
-            <DashOngoing
+              <DashOngoing
                 title="Custom t-shirt Printing "
                 pcs="200pcs"
                 month="2 months "
@@ -64,7 +64,7 @@ const Dashboard = () => {
               />
             </div>
             <div className="dash-ongoing-project">
-            <DashOngoing
+              <DashOngoing
                 title="Necklace"
                 pcs="200pcs"
                 month="1 month "

@@ -38,3 +38,20 @@
     background-color: #CBD8DD;
     color: #024A66;
   }
+
+  @media (max-width:800px){
+    .filter{display: none;
+    }
+    #jobOffer{
+      display: flex;
+    }
+    .layout{
+      flex-direction: column;
+      padding: 20px;
+    }
+    .dash-main-container{
+      padding-right:40px;
+    }
+    
+         
+}

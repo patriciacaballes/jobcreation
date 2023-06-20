@@ -6,6 +6,7 @@
     gap: 20px;
     background: rgba(219, 230, 235, 0.38);
     border-radius: 20px;
+    width: 100%;
 
 }
 
@@ -80,4 +81,26 @@
 .btn-close:hover{
     background-color: #024A66;
     color: #ffff;
+}
+
+
+@media(max-width:800px){
+    .main-info{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 0px;
+    }
+    .info-container p{
+        font-size: 0.8rem;
+       
+    }
+    .info-container {
+        margin: 0px; 
+        padding: 40px 20px;      
+    }
+    .description,.responsibilities,.requirements,.working-conditions{
+        padding-left: 0px;
+    
+    }
 }

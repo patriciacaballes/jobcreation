@@ -27,14 +27,21 @@ const PasswordReset = () => {
   return (
     <>
       <div className="reset-password relative flex flex-1 flex-col overflow-hidden px-4 py-8 sm:px-6 lg:px-8 ">
-        <div className="flex flex-1 flex-col items-center justify-center" id="reset-form">
+        <div
+          className="flex flex-1 flex-col items-center justify-center"
+          id="reset-form"
+        >
           <h2 className="text-2xl font-bold ">Reset Password</h2>
           <h3 className="send-pass text-s pb-2 text-center ">
-            We will send you a password reset link connected to your existing account
+            We will send you a password reset link connected to your existing
+            account
           </h3>
           <form className="w-full max-w-sm" onSubmit={handleSubmit}>
             <div className="form-login flex flex-col mb-6">
-              <label className="block text-sm font-semibold leading-6 text-gray-900" id="email">
+              <label
+                className="block text-sm font-semibold leading-6 text-gray-900"
+                id="email"
+              >
                 Email
               </label>
               <input
@@ -59,12 +66,10 @@ const PasswordReset = () => {
               </button>
             </div>
             <div className="text-center back-login hover:underline">
-          Back to Login? <Link to={"/login"}>Login</Link>
-        </div>
+              Back to Login? <Link to={"/login"}>Login</Link>
+            </div>
           </form>
-
         </div>
-        
       </div>
     </>
   );
