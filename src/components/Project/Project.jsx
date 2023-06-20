@@ -17,14 +17,17 @@ const Project = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       if (user) {
-        let { data, error } = await supabase.from("applications").select("job_id(*) , id").eq("user_id",user?.id);
+        let { data, error } = await supabase
+          .from("applications")
+          .select("job_id(*) , id")
+          .eq("user_id", user?.id);
         if (error) {
           setFetchError("Could not fetch the jobs");
           setApplications(null);
         } else if (data) {
           setApplications(data);
           setFetchError(null);
-          console.log(data)
+          console.log(data);
         }
       }
     };
@@ -37,15 +40,11 @@ const Project = () => {
           <SideBar />
         </div>
         <div id="project">
-               
-        {applications && applications.map((application) => (
-
-  <JobCard job={application.job_id} key={application.job_id.id}
-  />
-
-  
-))}
-</div>
+          {applications &&
+            applications.map((application) => (
+              <JobCard job={application.job_id} key={application.id} />
+            ))}
+        </div>
       </div>
       <div className="bottom-bar">
         <BottomBar />
@@ -55,13 +54,3 @@ const Project = () => {
 };
 
 export default Project;
-
-
-  // <div key={application.id}>
-
-  //  <p> {application.job_id.title}
-  //   id
-  //   {application.id}
-  //   </p>
-  // </div>
-  // fine ciclo
