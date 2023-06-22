@@ -6,9 +6,10 @@
   "scripts": {
     "start": "vite",
     "dev": "vite",
-    "build": "npm run tailwind && vite build",
+    "build": "npm run tailwind-build && vite build",
     "preview": "vite preview",
-    "tailwind": "npx tailwindcss -i ./src/App.css -o ./dist/output.css --watch"
+    "tailwind": "npx tailwindcss -i ./src/App.css -o ./dist/output.css --watch",
+    "tailwind-build": "npx tailwindcss -i ./src/App.css -o ./dist/output.css"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.4.0",
