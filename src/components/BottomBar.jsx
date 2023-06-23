@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthProvider";
 import "./BottomBar.css";
+import jc from "../img/logo1.png";
+
 import {
   FaUserCircle,
   FaHome,
@@ -31,7 +33,8 @@ export default function BottomBar() {
       <ul className="menu menu-horizontal rounded-box ">
         <li>
           <Link to="/dashboard" className="bottomBar-icon">
-            <FaHome />
+            {/* <FaHome /> */}
+            <img className="home-logo"src={jc} alt="home"/>
           </Link>
         </li>
         <li>

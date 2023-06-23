@@ -71,6 +71,9 @@
       margin-bottom: 80px;
       padding-bottom: 40px;
     }
+    .logo-auth{
+      display: none;
+    }
   }
 
 

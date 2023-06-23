@@ -35,7 +35,7 @@ const NavBar = () => {
             {/* Non Autenticato */}
             <li>{!auth && <Link to="/login">Login</Link>}</li>
             <li>{!auth && <Link to="/register">Register</Link>}</li>
-            <li className="logo">{auth && <Link to="/home">
+            <li className="logo logo-auth">{auth && <Link to="/home">
             <img src={logo} alt="logo" />
               </Link>}</li>
           </ul>
