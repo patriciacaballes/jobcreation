@@ -47,13 +47,7 @@
     #jobOffer{
       display: flex;
     }
-    .layout{
-      flex-direction: column;
-      padding: 20px;
-    }
-    .dash-main-container{
-      padding-right:40px;
-    }
+ 
   
     
          

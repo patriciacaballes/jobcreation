@@ -39,3 +39,9 @@
     }
     
 }
+@media (max-width:600px){
+    .dash-main-container{
+        padding-right: 0px;
+    }
+    
+}
