@@ -63,5 +63,11 @@
         display: none;
     }
   }
+  @media(max-width:800px){
+    .layout{
+      margin-bottom: 80px;
+      padding-bottom: 40px;
+    }
+  }
 
 

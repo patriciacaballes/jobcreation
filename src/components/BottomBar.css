@@ -1,5 +1,5 @@
 .bottomBar-icon{
-    font-size: 20px; /* Dimensione desiderata */
+    font-size: 25px; /* Dimensione desiderata */
 }
 
 #bottom-bar a:hover{
@@ -7,3 +7,17 @@
     color: #ffffff;
 
   }
+
+.bottom-bar{
+    position: fixed;
+    bottom: 0px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 20px 20px 0px 0px;
+
+}

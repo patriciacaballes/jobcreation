@@ -27,9 +27,9 @@ export default function BottomBar() {
     }
   };
   return (
-    <div className="bottom-bar flex w-full justify-center" id="bottom-bar">
+    <div className="bottom-bar" id="bottom-bar">
       <ul className="menu menu-horizontal rounded-box ">
-        <li className="flex flex-row">
+        <li>
           <Link to="/dashboard" className="bottomBar-icon">
             <FaHome />
           </Link>

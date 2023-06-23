@@ -46,6 +46,11 @@
     }
     #jobOffer{
       display: flex;
+      padding: 10px;
+    }
+    .layout{
+      display: flex;
+      flex-direction: column;
     }
  
   
