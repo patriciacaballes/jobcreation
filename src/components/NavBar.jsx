@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthProvider";
 import { SideBar } from "./SideBar";
+import logo from "../img/logo.png";
+import "./NavBar.css"
 
 const NavBar = () => {
   const { auth, signOut } = useAuth();
@@ -22,9 +24,9 @@ const NavBar = () => {
         id="navbar"
       >
         {!auth && (
-          <div className="flex-1">
+          <div className="flex-1 logo">
             <Link to="./" className="btn btn-ghost normal-case text-xl">
-              Job Creation
+            <img src={logo} alt="logo" />
             </Link>
           </div>
         )}
@@ -33,7 +35,9 @@ const NavBar = () => {
             {/* Non Autenticato */}
             <li>{!auth && <Link to="/login">Login</Link>}</li>
             <li>{!auth && <Link to="/register">Register</Link>}</li>
-            <li>{auth && <Link to="/home">Job creation Logo</Link>}</li>
+            <li className="logo">{auth && <Link to="/home">
+            <img src={logo} alt="logo" />
+              </Link>}</li>
           </ul>
         </div>
       </div>
