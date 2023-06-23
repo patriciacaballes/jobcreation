@@ -49,6 +49,9 @@
 
 
   @media(min-width:800px){
+    .form-add-job h1, .job-offer-title h1 {
+      font-size: 0.8rem;
+    }
     #sidebar{
         display: block;
     }

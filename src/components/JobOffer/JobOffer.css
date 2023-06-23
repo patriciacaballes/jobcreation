@@ -5,6 +5,7 @@
     gap: 20px;
 }
 
+
 .jobs{
     display: flex;
     flex-direction: column;
@@ -40,6 +41,7 @@
   }
 
   @media (max-width:800px){
+    
     .filter{display: none;
     }
     #jobOffer{
@@ -52,6 +54,9 @@
     .dash-main-container{
       padding-right:40px;
     }
+  
     
          
 }
+
+

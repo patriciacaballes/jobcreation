@@ -47,3 +47,17 @@
     font-weight: bolder;
 
 }
+
+
+@media (max-width:600px) {
+    .project-info{
+        grid-template-columns: 1fr 4fr 1fr;
+    }
+    .project-title h1{
+        font-size: 0.8rem;
+    }
+    .project-info p, .month p , .project-start-end p , .project-price p{
+        font-size: 0.7rem;
+    }
+    
+}

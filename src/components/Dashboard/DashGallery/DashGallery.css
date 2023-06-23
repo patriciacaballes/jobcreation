@@ -26,3 +26,11 @@
     grid-row: 1fr 1fr;
     gap: 10px;
 }
+
+@media (max-width:600px) {
+    .gallery-images{
+        grid-template-columns: repeat(3,1fr);
+
+    }
+    
+}

@@ -70,6 +70,9 @@
 }
 
 @media (max-width:600px) {
+    .form-add-job h1, .job-offer-title h1{
+        font-size: 1.1rem;
+    }
     .add-main-info,.form-job-info{
         display: flex;
         flex-direction: column;

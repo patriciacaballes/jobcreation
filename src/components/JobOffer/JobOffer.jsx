@@ -60,7 +60,7 @@ const JobOffer = () => {
       <div id="jobOffer">
         <div className="jobCard">
         <div className="job-offer-title">
-            <h1>Discover the perfect job for you</h1>
+            <h1>Discover the perfect job</h1>
           <button className="add-job btn-apply"><Link to={"/add-job"}>+ Add Job</Link></button>
           {/* <button className="btn-apply">
           <Link to={"/" + job.id}> Apply now </Link>
