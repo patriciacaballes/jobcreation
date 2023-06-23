@@ -76,6 +76,7 @@
     .add-main-info,.form-job-info{
         display: flex;
         flex-direction: column;
+        padding: 10px;
         
     }
     .form-add-job{
