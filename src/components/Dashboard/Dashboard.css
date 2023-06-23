@@ -11,6 +11,7 @@
     display: grid;
     grid-template-rows: 1fr 2fr 1fr;
     gap: 10px;
+    height: 100%;
 }
 .dash-container2{
     display: grid;
@@ -21,6 +22,9 @@
     padding: 20px;
     border-radius: 10px;
     width: 100%;
+    height: 100%;
+}
+.status{
     height: 100%;
 }
 

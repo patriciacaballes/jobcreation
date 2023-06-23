@@ -19,13 +19,13 @@ const Dashboard = () => {
         {/* Dashboard */}
         <div className="dash-main-container" id="dashboard">
           <div className="dash-container1">
-            <div className="">
+            <div>
               <DashProject />
             </div>
-            <div className="">
+            <div>
               <DashGallery />
             </div>
-            <div className="">
+            <div className="status">
               <DashAppStat />
             </div>
 

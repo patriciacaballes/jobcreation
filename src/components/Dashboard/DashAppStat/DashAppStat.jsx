@@ -7,7 +7,7 @@ export default function DashAppStat() {
       <div className="statContainer">
         <div className="title-project">Invitation Card</div>
         <div className="stat">
-          <div className="div">50%</div>
+          <div>50%</div>
           <div className="stat-progress">
             <progress
               className="custom-progress bg-primary"
