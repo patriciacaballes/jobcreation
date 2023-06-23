@@ -1,24 +1,27 @@
-// Controlla se il browser supporta i service worker
+// serviceWorkerRegistration.js
 export function register() {
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
       navigator.serviceWorker
         .register("/service-worker.js")
         .then((registration) => {
-          console.log("Service worker registrato con successo:", registration);
+          console.log("Service worker registered:", registration);
         })
         .catch((error) => {
-          console.log("Errore durante la registrazione del service worker:", error);
+          console.log("Service worker registration failed:", error);
         });
     });
   }
 }
 
-// Cancella il service worker esistente, se presente
 export function unregister() {
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.ready.then((registration) => {
-      registration.unregister();
-    });
+    navigator.serviceWorker.ready
+      .then((registration) => {
+        registration.unregister();
+      })
+      .catch((error) => {
+        console.log("Service worker unregistration failed:", error);
+      });
   }
 }
