@@ -36,7 +36,7 @@ const Login = () => {
     <>
       <div className="login relative flex flex-1 flex-col overflow-hidden px-4 py-8 sm:px-6 lg:px-8">
         <div
-          className="flex flex-1 flex-col items-center justify-center pb-16 pt-12"
+          className="flex flex-1 flex-col items-center justify-start pb-16 pt-12"
           id="login-form"
         >
           <h2 className="text-2xl font-bold ">Welcome Back</h2>

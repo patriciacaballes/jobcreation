@@ -47,6 +47,9 @@
     color: #024A66;
   }
 
+  #login-form{
+    justify-content: flex-start;
+  }
 
   @media(min-width:800px){
     .form-add-job h1, .job-offer-title h1 {
