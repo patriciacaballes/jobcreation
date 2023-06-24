@@ -34,9 +34,9 @@ const SideBar = () => {
       <nav className="sidebar card">
         <ul className=" menu w-56 rounded-box" id="sidebar-menu">
           <div>
-            <div>
+            <div className="profilo">
               <FaUserCircle className="sideBar-icon" />
-              <span>Nome Utente</span>
+              <span></span>
             </div>
           </div>
           <li>

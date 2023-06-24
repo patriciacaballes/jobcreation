@@ -14,7 +14,12 @@ const Notification = () => {
         <div id="sidebar">
           <SideBar />
         </div>
-        <div id="notification">notification</div>
+        <div id="notification">
+          <h1>
+          Work in progress
+          we apologise for any inconvenience caused
+          </h1>
+        </div>
       </div>
       <div className="bottom-bar">
         <BottomBar />

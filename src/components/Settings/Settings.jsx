@@ -13,7 +13,12 @@ const Settings = () => {
         <div id="sidebar">
           <SideBar />
         </div>
-        <div id="settings">Settings</div>
+        <div id="settings">
+        <h1>
+          Work in progress
+          we apologise for any inconvenience caused
+          </h1>
+        </div>
       </div>
       <div className="bottom-bar">
         <BottomBar />

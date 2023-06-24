@@ -13,7 +13,12 @@ const TaskList = () => {
         <div id="sidebar">
           <SideBar />
         </div>
-        <div id="taskList">TaskList</div>
+        <div id="taskList">
+        <h1>
+          Work in progress
+          we apologise for any inconvenience caused
+          </h1>
+        </div>
       </div>
       <div className="bottom-bar">
         <BottomBar />

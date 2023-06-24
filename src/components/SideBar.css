@@ -30,3 +30,12 @@
 .sideBar-icon{
     font-size: 20px; /* Dimensione desiderata */
 }
+.profilo{
+    display: flex;
+    justify-content: center;
+}
+.profilo svg{
+    font-size: 4rem;
+    justify-self: center;
+    align-self: center;
+}
