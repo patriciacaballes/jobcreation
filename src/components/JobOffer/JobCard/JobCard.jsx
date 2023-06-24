@@ -3,7 +3,7 @@ import "./JobCard.css";
 import { Link } from "react-router-dom";
 import JobInformation from "../JobInformation/JobInformation";
 
-export default function JobCard({ job }) {
+export default function JobCard({ job,btn }) {
   return (
     <>
       <div className="card-container">
@@ -18,7 +18,7 @@ export default function JobCard({ job }) {
 
         <Link to={"/" + job.id}>
           <button className="btn-apply">
-             Apply now 
+            {btn}
           </button>
         </Link>
       </div>

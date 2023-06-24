@@ -42,7 +42,7 @@ const Project = () => {
         <div id="project">
           {applications &&
             applications.map((application) => (
-              <JobCard job={application.job_id} key={application.id} />
+              <JobCard job={application.job_id} btn="details" key={application.id} />
             ))}
         </div>
       </div>

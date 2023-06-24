@@ -81,7 +81,7 @@ const JobOffer = () => {
           {/* Display Jobs */}
           <div className="jobs">
             {currentJobs.map((job) => (
-              <JobCard job={job} key={job.id} />
+              <JobCard job={job} btn="apply now" key={job.id} />
             ))}
           </div>
           {/* Pagination */}
