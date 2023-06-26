@@ -7,6 +7,7 @@ import JobCard from "./JobCard/JobCard";
 import { supabase } from "../../supabase/client";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import JobFilter from "./JobFilter/JobFilter";
 
 const JobOffer = () => {
   const { user } = useAuth();
@@ -111,7 +112,7 @@ const JobOffer = () => {
           )}
         </div>
         {/* Filter */}
-        <div className="filter">filter</div>
+        <div className="filter"><JobFilter/></div>
       </div>
 
       <div className="bottom-bar">
