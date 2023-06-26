@@ -15,6 +15,7 @@ const Notification = () => {
           <SideBar />
         </div>
         <div id="notification">
+        <h1 className="title-notification">Notification</h1>
           <h1>
           Work in progress
           we apologise for any inconvenience caused

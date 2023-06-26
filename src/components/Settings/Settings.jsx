@@ -14,6 +14,7 @@ const Settings = () => {
           <SideBar />
         </div>
         <div id="settings">
+        <h1 className="title-settings">Settings</h1>
         <h1>
           Work in progress
           we apologise for any inconvenience caused

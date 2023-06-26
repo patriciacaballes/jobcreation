@@ -40,6 +40,7 @@ const Project = () => {
           <SideBar />
         </div>
         <div id="project">
+          <h1 className="title-projects">Projects</h1>
           {applications &&
             applications.map((application) => (
               <JobCard job={application.job_id} btn="details" key={application.id} />

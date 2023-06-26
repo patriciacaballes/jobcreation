@@ -13,6 +13,7 @@ const Chat = () => {
           <SideBar />
         </div>
         <div id="chat">
+        <h1 className="title-messaging">Messaging</h1>
         <h1>
           Work in progress
           we apologise for any inconvenience caused

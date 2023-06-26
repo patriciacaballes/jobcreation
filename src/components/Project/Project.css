@@ -4,6 +4,12 @@
     gap: 10px;
 }
 
+.title-projects,.title-task-list,.title-notification,.title-messaging,.title-settings{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #024A66;
+}
+
 @media (max-width:600px) {
     #project{
         margin: 0px 10px;

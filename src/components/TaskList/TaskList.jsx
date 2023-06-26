@@ -14,6 +14,7 @@ const TaskList = () => {
           <SideBar />
         </div>
         <div id="taskList">
+        <h1 className="title-task-list">Task List</h1>
         <h1>
           Work in progress
           we apologise for any inconvenience caused
