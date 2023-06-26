@@ -33,7 +33,7 @@ const NavBar = () => {
         <div className="flex-none">
           <ul className="menu menu-horizontal px-1">
             {/* Non Autenticato */}
-            <li>{!auth && <Link to="/login">Login</Link>}</li>
+            <li>{!auth && <Link to="/">Login</Link>}</li>
             <li>{!auth && <Link to="/register">Register</Link>}</li>
             <li className="logo logo-auth">{auth && <Link to="/home">
             <img src={logo} alt="logo" />

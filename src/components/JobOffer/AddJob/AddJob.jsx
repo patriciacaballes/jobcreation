@@ -267,7 +267,7 @@ const AddJob = () => {
     }
   }}
 >
-                Add Job
+                Add
               </button>
             </div>
           </form>

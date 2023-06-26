@@ -66,7 +66,7 @@ const PasswordReset = () => {
               </button>
             </div>
             <div className="text-center back-login hover:underline">
-              Back to Login? <Link to={"/login"}>Login</Link>
+              Back to Login? <Link to={"/"}>Login</Link>
             </div>
           </form>
         </div>

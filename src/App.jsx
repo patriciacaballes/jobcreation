@@ -29,7 +29,7 @@ const App = () => {
               <Route path="/dashboard" element={<Dashboard />} />
             </Route> */}
             <Route element={<AuthRoute />}>
-              <Route path="/" element={<Dashboard />} />
+              {/* <Route path="/" element={<Dashboard />} /> */}
               <Route path="/home" element={<Dashboard />} />
               <Route path="/dashboard" element={<Dashboard />}>
                 <Route path="/dashboard-project" element={<DashProject />} />
@@ -44,7 +44,7 @@ const App = () => {
               <Route path="/add-job" element={<AddJob />} />
             </Route>
             <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/" element={<Login />} />
             <Route path="/passwordreset" element={<PasswordReset />} />
             <Route path="/update-password" element={<UpdatePassword />} />
           </Routes>
